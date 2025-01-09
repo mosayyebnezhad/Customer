@@ -15,6 +15,10 @@ node_modules/
 .env
 .env.production
 
+
+.vercel
+
+
 # logs
 logs/
 *.log
