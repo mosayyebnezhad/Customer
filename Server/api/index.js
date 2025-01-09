@@ -1,16 +1,11 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
-import Hello from './Component/hello'
-
 
 const app = new Hono().basePath('/api')
 
-
-app.get('/hello', (req, res) => {
-  return req.html(<Hello/>)
+app.get('/', (c) => {
+  return c.json({ message: "Congrats! You've deployed Hono to Vercel" })
 })
-
-
 
 const handler = handle(app);
 
