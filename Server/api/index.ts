@@ -1,5 +1,8 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/vercel'
+// @ts-ignore
+import Mainpage from './Components/intrypoint.ts'
+
 
 const app = new Hono().basePath('/api')
 
@@ -10,7 +13,7 @@ const app = new Hono().basePath('/api')
 
 
 app.get('/', (c) => {
-  return c.html('Welcome to Api of my site')
+  return c.html(Mainpage)
 })
 
 const handler = handle(app);
